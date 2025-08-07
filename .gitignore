@@ -1,15 +1,16 @@
-# Terraform
-.terraform/
+# Terraform state and cache
 *.tfstate
 *.tfstate.*
-*.tfvars
-crash.log
-*.tfvars.json
+.terraform/
+*.terraform.lock.hcl
 
-# OS and Editor
-.DS_Store
-Thumbs.db
+# BFG artifacts
+bfg.jar
+.git-mirror/
+.git-mirror.bfg-report/
+
+# OS and editor clutter
 *.log
 *.bak
-.vscode/
-.idea/
+*.DS_Store
+Thumbs.db
