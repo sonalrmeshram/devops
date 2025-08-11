@@ -62,6 +62,7 @@ resource "aws_db_instance" "RDS-read-replica" {
     publicly_accessible = false
     storage_type = "gp2"
     replicate_source_db = aws_db_instance.main.arn
+    skip_final_snapshot = true
 
     db_subnet_group_name = aws_db_subnet_group.group.name
     vpc_security_group_ids = [ aws_security_group.Name.id ]
