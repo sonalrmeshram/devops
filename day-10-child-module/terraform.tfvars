@@ -1,0 +1,6 @@
+cidr_block = "10.0.0.0/16"
+subnet_cidr = "10.0.0.0/24"
+availability_zone = "us-east-1a"
+bucket_name = "sonalrmeshram"
+ami = "ami-08a6efd148b1f7504"
+instance_type = "t2.micro"
