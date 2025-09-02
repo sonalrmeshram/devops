@@ -13,4 +13,4 @@ bfg.jar
 *.log
 *.bak
 *.DS_Store
-Thumbs.db
+Thumbs.db.terragrunt-cache/
