@@ -3,6 +3,7 @@
 *.tfstate.*
 .terraform/
 *.terraform.lock.hcl
+terraform.tfvars
 
 # BFG artifacts
 bfg.jar
@@ -13,4 +14,9 @@ bfg.jar
 *.log
 *.bak
 *.DS_Store
-Thumbs.db.terragrunt-cache/
+Thumbs.db
+*.zip
+*.pem
+
+# Terragrunt cache
+.terragrunt-cache/
