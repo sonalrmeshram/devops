@@ -26,6 +26,9 @@ jobs:
       - name: Terraform Init
         working-directory: day-2-main-config-files
         run: terraform init
+      - name: Terraform apply 
+        working-directory: day-2-main-config-files
+        run: terraform apply -auto-approve
 
       - name: Terraform Plan
         working-directory: day-2-main-config-files
