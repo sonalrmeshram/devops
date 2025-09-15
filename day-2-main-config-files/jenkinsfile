@@ -1,17 +1,40 @@
-node {
-    def mvnHome
-    stage('Preparation') { 
-        git branch: 'main', url: 'https://github.com/sonalrmeshram/devops.git'
+pipeline {
+  agent any
+
+  environment {
+    TF_DIR = 'day-2-main-config-files'
+  }
+
+  stages {
+    stage('Clone') {
+      steps {
+        git branch: 'main', url: 'https://github.com/CloudTechDevOps/Terraform_CICD.git'
+      }
     }
-    stage('Build') {
-        dir('day-2-main-config-files') {
-       sh 'terraform init'
-}
-     
+
+    stage('Init') {
+      steps {
+        dir("${env.TF_DIR}") {
+          sh 'terraform init'
+        }
+      }
     }
-    stage('Results') {
-          dir('day-2-main-config-files') {
-        sh 'terraform plan'
-}
+
+    stage('Plan') {
+      steps {
+        dir("${env.TF_DIR}") {
+          sh 'terraform plan'
+        }
+      }
     }
+  }
+
+  post {
+    success {
+      echo '✅ Terraform pipeline completed successfully.'
+    }
+    failure {
+      echo '❌ Terraform pipeline failed.'
+    }
+  }
 }
