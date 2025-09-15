@@ -1,0 +1,17 @@
+node {
+    def mvnHome
+    stage('Preparation') { 
+        git branch: 'main', url: 'https://github.com/sonalrmeshram/devops.git'
+    }
+    stage('Build') {
+        dir('day-2-main-config-files') {
+       sh 'terraform init'
+}
+     
+    }
+    stage('Results') {
+          dir('day-2-main-config-files') {
+        sh 'terraform plan'
+}
+    }
+}
